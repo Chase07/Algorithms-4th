@@ -1,7 +1,6 @@
 package Chapter1_3;
 
 import java.util.Iterator;
-
 import edu.princeton.cs.introcs.StdIn;
 import edu.princeton.cs.introcs.StdOut;
 
@@ -33,6 +32,11 @@ public class Stack<Item> implements Iterable<Item>
 		--size;
 		return temp;
 	}
+	public Item Top()
+	{
+		if(isEmpty()) { throw new RuntimeException("Stack is empty!"); }
+		return first.item;
+	}
 	//Iterator
 	public Iterator<Item> iterator()
 	{
@@ -58,14 +62,18 @@ public class Stack<Item> implements Iterable<Item>
 		{
 			String temp = StdIn.readString();
 			if(!temp.equals("-")) stack.push(temp);
-			//else if(!stack.isEmpty()) StdOut.print(stack.pop() + " ");
+			else if(!stack.isEmpty()) StdOut.print(stack.pop() + " ");
 		}
 		//Test for iterable
-		for(String str : stack)
+		/*for(String str : stack)
 		{
 			StdOut.print(str + " ");
-		}
+		}*/
 		StdOut.println("(" + stack.size() + " left on stack)");
 	}
+	/*Exercise1-3-2:
+	 Q:it was - the best - of times - - - it was - the - - 
+	 A:was best times of the was the it (1 left on stack)                     
+	 */
 
 }

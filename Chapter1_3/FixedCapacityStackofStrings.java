@@ -24,6 +24,11 @@ public class FixedCapacityStackofStrings
 	{
 		return N == 0;
 	}
+	//Exercise1-3-1:
+	public boolean isFull()
+	{
+		return N == str.length;
+	}
 	public int size()
 	{
 		return N;
