@@ -42,7 +42,7 @@ public class Exercise_03 {
 	}
 	public static void main(String[] args) throws IOException 
 	{
-		Scanner input = new Scanner((Paths.get("src/Chapter1_3/PopOrder.txt")));
+		Scanner input = new Scanner(Paths.get("src/Chapter1_3/PopOrder.txt"));
 		String[] data = new String[10];
 		int[] popOrder = new int[10];
 		for (int i = 0; i < 8; i++) 
@@ -55,7 +55,6 @@ public class Exercise_03 {
 			checkOrder(popOrder);
 			System.out.println();
 		}	
-		
 	}
 
 }

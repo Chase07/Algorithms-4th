@@ -32,6 +32,7 @@ public class Stack<Item> implements Iterable<Item>
 		--size;
 		return temp;
 	}
+	//Exercise_07
 	public Item Top()
 	{
 		if(isEmpty()) { throw new RuntimeException("Stack is empty!"); }
