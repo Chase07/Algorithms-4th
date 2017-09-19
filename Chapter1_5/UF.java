@@ -1,0 +1,51 @@
+package Chapter1_5;
+
+import edu.princeton.cs.introcs.StdIn;
+import edu.princeton.cs.introcs.StdOut;
+
+public class UF {
+
+	private int[] id;// id for accessing to components(site index)
+	private int count;// number of components
+	
+	public UF(int N)
+	{
+		//Initialize component id array
+		count  = N;
+		id = new int[N];
+		for (int i = 0; i < id.length; i++) {
+			id[i] = i;
+		}
+	
+	}
+	public int count() { return count; }
+	public boolean connected(int p, int q)
+	{
+		return find(p) == find(q);
+	}
+	public int find(int p)
+	{
+		
+	}
+	public void union(int p, int q)
+	{
+		
+	}
+	public static void main(String[] args) 
+	{
+		// Dynamic connectivity problem 
+		int N = StdIn.readInt();
+		UF uf = new UF(N);
+		while(!StdIn.isEmpty())
+		{
+			int p = StdIn.readInt();
+			int q = StdIn.readInt();
+			if(uf.connected(p, q)) { continue; }
+			uf.union(p, q);
+			StdOut.println(p + " joint " + q);
+			
+		}
+		StdOut.println(uf.count() + " components");
+	}
+
+}
