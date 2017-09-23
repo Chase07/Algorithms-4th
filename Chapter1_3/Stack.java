@@ -12,13 +12,34 @@ public class Stack<Item> implements Iterable<Item>
 	{
 		Item item;
 		Node next;
+		public Node() {  }
+		// A copy constructor
+		public Node(Node that)
+		{
+			this.item = that.item;
+			this.next = that.next;
+		}
 	}
-	
+	public Stack()
+	{
+		first = null;
+		size = 0;
+	}
+	// Exercise_42
+	public Stack(Stack<Item> s)
+	{
+		first = new Node(s.first);
+		for(Node temp = first; temp.next != null; temp = temp.next)
+		{
+			temp.next = new Node(temp.next);
+		}
+		
+	}
 	public boolean isEmpty() { return first == null; }
 	public int size() { return size; }
 	public void push(Item item)
 	{
-		//This is a stack(LIFO)
+		// This is a stack(LIFO)
 		Node oldfirst = first;
 		first = new Node();
 		first.item = item;
@@ -35,9 +56,10 @@ public class Stack<Item> implements Iterable<Item>
 	//Exercise_07
 	public Item Top()
 	{
-		if(isEmpty()) { throw new RuntimeException("Stack is empty!"); }
+		if(isEmpty()) { throw new RuntimeException("This stack is empty!"); }
 		return first.item;
 	}
+	0
 	//Iterator
 	public Iterator<Item> iterator()
 	{

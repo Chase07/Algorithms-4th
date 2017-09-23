@@ -38,6 +38,11 @@ public class Queue<Item> implements Iterable<Item>
 		--size;
 		return temp;
 	}
+	public Item Head()
+	{
+		if(isEmpty()) { throw new RuntimeException("This queue is empty!"); }
+		return first.item;
+	}
 	//Iterator
 	public Iterator<Item> iterator()
 	{

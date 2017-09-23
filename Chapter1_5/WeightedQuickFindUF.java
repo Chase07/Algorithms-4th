@@ -7,12 +7,12 @@ import java.util.Scanner;
 import edu.princeton.cs.introcs.StdOut;
 import edu.princeton.cs.introcs.Stopwatch;
 
-public class WeightQuickFindUF {
+public class WeightedQuickFindUF {
 
 	private int[] id;
 	private int[] sz;// size of component for roots
 	private int count;// number of components
-	public WeightQuickFindUF(int N)
+	public WeightedQuickFindUF(int N)
 	{
 		count = N;
 		id = new int[N];
@@ -101,10 +101,10 @@ public class WeightQuickFindUF {
 	public static void main(String[] args) throws IOException 
 	{
 		// Dynamic connectivity problem
-		Scanner in = new Scanner(Paths.get("src/Chapter1_5/largeUF.txt"));
+		Scanner in = new Scanner(Paths.get("src/Chapter1_5/tinyUF.txt"));
 		int N = in.nextInt();
 		System.out.println(N);
-		WeightQuickFindUF uf = new WeightQuickFindUF(N);
+		WeightedQuickFindUF uf = new WeightedQuickFindUF(N);
 		Stopwatch timer = new Stopwatch();
 		while(in.hasNext())
 		{
@@ -121,7 +121,7 @@ public class WeightQuickFindUF {
 }
 /*largeUF.txt        mediumUF.txt      tinyUF.txt
  * N = 1000000        N = 625			N = 10
- * 20.329 seconds    0.056 seconds     0.002 seconds
+ * 20.329 seconds    0.054 seconds     0.0 seconds
  * 6 components		  3 components   	2 components
  * */
  
