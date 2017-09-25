@@ -59,7 +59,7 @@ public class Stack<Item> implements Iterable<Item>
 		if(isEmpty()) { throw new RuntimeException("This stack is empty!"); }
 		return first.item;
 	}
-	0
+	
 	//Iterator
 	public Iterator<Item> iterator()
 	{

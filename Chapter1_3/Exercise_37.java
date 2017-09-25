@@ -14,6 +14,7 @@ public class Exercise_37 {
 		for (int i = 0; i < N; i++) {
 			alive1.Enqueue(i); 
 		}
+		
 		while(!alive1.isEmpty() || !alive2.isEmpty())
 		{
 			if(switchToalive1 && knife != M)
