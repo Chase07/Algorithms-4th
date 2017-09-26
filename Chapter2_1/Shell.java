@@ -1,16 +1,20 @@
 package Chapter2_1;
 
-public class Insertion {
+public class Shell {
 
 	public static void sort(Comparable[] a)
 	{
 		int N = a.length;
-		for (int i = 1; i < N; i++) {
-			// Remember the left side of array is order
-			for (int j = i; j > 0 && less(a[j], a[j-1]); j--) {
-				// If the a[j] is small enough, it could move to most left one by one  
-				exch(a, j, j -1);
+		int h = 1;
+		while(h < N / 3) { h = 3 * h + 1; }
+		while(h >= 1)
+		{
+			for (int i = 1; i < N; i++) {
+				for (int j = i; j >= h && less(a[j], a[j-h]); j -= h ) {
+					exch(a, j, j - h);
+				}
 			}
+			h /= 3;
 		}
 	}
 	public static boolean less(Comparable v, Comparable w)
@@ -37,4 +41,5 @@ public class Insertion {
 		}
 		return true;
 	}
+
 }
