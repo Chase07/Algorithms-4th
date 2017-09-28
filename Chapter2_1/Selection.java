@@ -2,7 +2,7 @@ package Chapter2_1;
 
 public class Selection {
 
-	public static void sort(Double[] a)
+	public static void sort(Comparable[] a)
 	{   // Sort a[] into increasing order
 		int N = a.length;
 		for (int i = 0; i < N; i++) 
