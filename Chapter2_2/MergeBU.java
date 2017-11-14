@@ -15,18 +15,18 @@ public class MergeBU {
 		}
 		
 	}
-	private static void merge(Comparable[] a, Comparable[] aux, int lo, int mid, int hi)
+	private static void merge(Comparable[] src, Comparable[] aux, int lo, int mid, int hi)
 	{
-		aux = new Comparable[a.length];
+		aux = new Comparable[src.length];
 		int i = lo, j = mid + 1;
 		for (int k = 0; k <= hi; k++) {
-			aux[k] = a[k];
+			aux[k] = src[k];
 		}
 		for (int k = lo; k <= hi; k++) {
-			if     (i > mid)       		  { a[k] = aux[j++]; }
-			else if(j > hi)  			  { a[k] = aux[i++]; }
-			else if(less(aux[i], aux[j])) { a[k] = aux[i++]; }
-			else						  { a[k] = aux[j++]; }
+			if     (i > mid)       		  { src[k] = aux[j++]; }
+			else if(j > hi)  			  { src[k] = aux[i++]; }
+			else if(less(aux[i], aux[j])) { src[k] = aux[i++]; }
+			else						  { src[k] = aux[j++]; }
 		
 		}
 	}
